@@ -42,7 +42,7 @@ aside {
   background: lightblue;
   width: 150px;
   position: fixed;
-  padding: 70px 16px 16px 16px;
+  padding: 16px;
   top: 0;
   left: 0;
 
@@ -54,6 +54,12 @@ aside {
     > li {
       padding: 4px 0;
     }
+  }
+  @media (max-width: 500px) {
+    position: fixed;
+    padding-top: 70px;
+    top: 0;
+    left: 0;
   }
 }
 </style>
