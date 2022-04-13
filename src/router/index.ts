@@ -2,6 +2,10 @@ import {createWebHashHistory, createRouter} from 'vue-router';
 import Home from '../views/Home.vue';
 import Doc from '../views/Doc.vue';
 import SwitchDemo from '../components/warehouse/SwitchDemo.vue';
+import ButtonDemo from '../components/warehouse/ButtonDemo.vue';
+import DialogDemo from '../components/warehouse/DialogDemo.vue';
+import TabsDemo from '../components/warehouse/TabsDemo.vue';
+import DocDemo from '../components/warehouse/DocDemo.vue';
 
 
 const history = createWebHashHistory();
@@ -11,13 +15,14 @@ const router = createRouter({
     {path: '/', component: Home},
     {
       path: '/doc', component: Doc, children: [
-        {path: 'switch', component: SwitchDemo}
+        {path: '', component: DocDemo},
+        {path: 'switch', component: SwitchDemo},
+        {path: 'button', component: ButtonDemo},
+        {path: 'dialog', component: DialogDemo},
+        {path: 'tabs', component: TabsDemo},
       ]
     }
   ]
-});
-router.afterEach(() => {
-  console.log('111');
 });
 
 export default router;
