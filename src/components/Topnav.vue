@@ -13,7 +13,7 @@ import {inject, Ref} from 'vue';
 
 export default {
   setup() {
-    const asideVisible = inject<Ref<boolean>>('xxx');
+    const asideVisible = inject<Ref<boolean>>('asideVisible');
     const toggleAside = () => {
       asideVisible.value = !asideVisible.value;
     };
@@ -26,7 +26,7 @@ export default {
 .topnav {
   background: pink;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 16px;
   position: relative;
@@ -44,6 +44,15 @@ export default {
 
     > li {
       margin: 0 1em;
+    }
+  }
+
+  @media (max-width: 500px) {
+    > .menu {
+      display: none;
+    }
+    > .logo {
+      margin: 0 auto;
     }
   }
 }
