@@ -1,21 +1,24 @@
 <template>
   <template v-if="visible">
-    <div class="snow-dialog-overlay" @click="closeOnClickOverlay"></div>
-    <div class="snow-dialog-wrapper">
-      <div class="snow-dialog">
-        <header>
-          <slot name="title"/>
-          <span @click="close" class="snow-dialog-close"></span>
-        </header>
-        <main>
-          <slot name="content"/>
-        </main>
-        <footer>
-          <Buttton @click="ok" level="main">OK</Buttton>
-          <Buttton @click="cancel">cancel</Buttton>
-        </footer>
+    <teleport to="body">
+      <div class="snow-dialog-overlay" @click="closeOnClickOverlay"></div>
+      <div class="snow-dialog-wrapper">
+        <div class="snow-dialog">
+          <header>
+            <slot name="title"/>
+            <span @click="close" class="snow-dialog-close"></span>
+          </header>
+          <main>
+            <slot name="content"/>
+          </main>
+          <footer>
+            <Buttton @click="ok" level="main">OK</Buttton>
+            <Buttton @click="cancel">cancel</Buttton>
+          </footer>
+        </div>
       </div>
-    </div>
+    </teleport>
+
   </template>
 </template>
 
