@@ -18,7 +18,6 @@
         </div>
       </div>
     </teleport>
-
   </template>
 </template>
 
@@ -49,8 +48,9 @@ export default {
       }
     }
     const cancel = () => {
-      context.emit('cancel')
-      close()
+      props.cancel?.()
+        close()
+
     }
     return { close, closeOnClickOverlay, ok, cancel }
   }
