@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="topnavAndBanner">
     <Topnav/>
     <div class="banner">
       <h1>snow-UI</h1>
@@ -21,13 +21,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.topnavAndBanner{
+  background: radial-gradient(circle,
+      rgba(189,177,197,0.9756945014333859) 30%,
+      rgba(235,230,222,0.9504844173997724) 100%);
+}
 .banner {
   padding: 100px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: lightgreen;
+
   > .actions{
     padding: 8px 0;
     a {
