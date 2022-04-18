@@ -5,8 +5,9 @@
       <h1>Snow-UI</h1>
       <h2>一个厉害的 UI 框架</h2>
       <p class="actions">
-        <a href="">github</a>
-        <router-link to="/doc">开始</router-link>
+        <a href="https://juejin.cn/user/2190679110860637">My blog</a>
+        <a href="https://github.com/wzttao">github</a>
+        <router-link to="/doc">start</router-link>
       </p>
     </div>
   </div>
