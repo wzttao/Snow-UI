@@ -80,8 +80,9 @@ export default {
 
     > li {
       margin: 16px 0;
+      padding-left: 16px;
       display: grid;
-      justify-content: start;
+      justify-content: center;
       align-content: space-between;
       grid-template-areas:
         "icon title"
