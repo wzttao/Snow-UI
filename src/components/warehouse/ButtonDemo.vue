@@ -1,69 +1,27 @@
 <template>
-  <div>Button 示例</div>
-  <h1>示例一</h1>
   <div>
-    <Button>你好</Button>
-    <Button @click="onClick">你好</Button>
-    <Button theme="button">你好</Button>
-    <Button theme="link">你好</Button>
-    <Button theme="text">你好</Button>
+    <h1>Button 示例</h1>
+    <Demo :component="firstButton"/>
+    <Demo :component="secondButton"/>
+    <Demo :component="thirdButton"/>
+    <Demo :component="fourthButton"/>
+    <Demo :component="fifthButton"/>
   </div>
-  <h1>示例二</h1>
-  <div>
-    <Button size="big">大大大</Button>
-    <Button>普普通</Button>
-    <Button size="small">小小小</Button>
-  </div>
-  <div>
-    <Button theme="link" size="big">大大大</Button>
-    <Button theme="link">普普通</Button>
-    <Button size="small" theme="link">小小小</Button>
-  </div>
-  <div>
-    <Button size="big" theme="text">大大大</Button>
-    <Button theme="text">普普通</Button>
-    <Button size="small" theme="text">小小小</Button>
-  </div>
-  <h1>示例三</h1>
-  <div>
-    <Button level="main">主要按钮</Button>
-    <Button>普通按钮</Button>
-    <Button level="danger">危险按钮</Button>
-  </div>
-  <div>
-    <Button theme="link" level="main">主要链接按钮</Button>
-    <Button theme="link">普通链接按钮</Button>
-    <Button theme="link" level="danger">危险链接按钮</Button>
-  </div>
-  <div>
-    <Button theme="text" level="main">主要文字按钮</Button>
-    <Button theme="text">普通文字按钮</Button>
-    <Button theme="text" level="danger">危险文字按钮</Button>
-  </div>
-  <h1>示例四</h1>
-  <div>
-    <Button disabled>禁用按钮</Button>
-    <Button theme="link" disabled>禁用链接按钮</Button>
-    <Button theme="text" disabled>禁用按钮</Button>
-  </div>
-    <h1>示例五</h1>
-    <div>
-      <Button loading>加载中</Button>
-      <Button>加载完毕</Button>
-    </div>
 </template>
 
 <script lang="ts">
-import Button from '../../lib/Button.vue';
+import Demo from '../Demo.vue';
+import firstButton from '../buttonStore/firstButton.vue';
+import secondButton from '../buttonStore/secondButton.vue';
+import thirdButton from '../buttonStore/thirdButton.vue';
+import fourthButton from '../buttonStore/fourthButton.vue';
+import fifthButton from '../buttonStore/fifthButton.vue';
 
 export default {
-  components: { Button },
+  components: {Demo},
 
   setup() {
-    const onClick = () => {
-      console.log('hi');
-    };
-    return { onClick };
+    return {firstButton, secondButton, thirdButton, fourthButton, fifthButton};
   }
 };
 </script>

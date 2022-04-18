@@ -1,11 +1,18 @@
 <template>
   <div class="topnav">
-    <div class="logo">LOGO</div>
+    <router-link to="/" class="logo">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-snow"></use>
+      </svg>
+    </router-link>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li>
+        <router-link to="/doc/intro">文档</router-link>
+      </li>
     </ul>
-    <span class="hamburger" @click="toggleAside"></span>
+    <svg class="hamburger" @click="toggleAside" v-if="toggleAsideVisible">
+      <use xlink:href="#icon-menu"></use>
+    </svg>
   </div>
 </template>
 
@@ -13,6 +20,10 @@
 import {inject, Ref} from 'vue';
 
 export default {
+  props:{
+    toggleAsideVisible: {type: Boolean,default: false}
+  },
+
   setup() {
     const asideVisible = inject<Ref<boolean>>('asideVisible');
     const toggleAside = () => {
@@ -33,11 +44,15 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
 
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    > svg{
+      width: 32px;
+      height: 32px;
+    }
   }
 
   > .menu {
@@ -50,14 +65,15 @@ export default {
     }
   }
   > .hamburger {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     background: red;
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
     display: none;
+    background: fade-out(#bdb1c5,0.4);
   }
   @media (max-width: 500px) {
     > .menu {
